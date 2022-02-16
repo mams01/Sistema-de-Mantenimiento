@@ -1,0 +1,11 @@
+*{
+    margin:0;
+    padding:0;
+    }
+    .container{
+        width:80%;
+        max-width:1000px;
+        background:#fff;
+        margin: 20px auto;
+        border-radius:2%;
+        }

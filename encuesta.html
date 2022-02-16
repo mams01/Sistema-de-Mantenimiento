@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Encuesta</title>
+    <link href="estilos\encuesta.css" rel="stylesheet" type="text/css">
+    <script>   
+      function validar()
+      {
+ 
+      var age = /^1[8-9]$|^[2-9][0-9]$/;
+ 
+      if (f.nombre.value==(""))
+      {
+        alert("Debe introducir un nombre.");
+        document.f.nombre.focus();
+        return false;
+      }
+      if (f.edad.value==(""))
+      {
+        alert("Debe introducir una edad.");
+        document.f.edad.focus();
+        return false;
+      }
+      if (!age.test(f.edad.value))
+      {
+        alert("Edad incorrecta (solo números > 18 & <100).");
+        document.f.edad.focus();
+        return false;
+      }
+      if (document.getElementById("escoger").selected)
+      {
+        alert("Debes indicar tus estudios.");
+        document.f.estudios.focus();
+        return false;
+      }
+      if (!f.condiciones.checked)
+      {
+        alert("Debes aceptar las condiciones.");
+        return false;
+      }
+ 
+      return true;
+ 
+      }
+   </script>
+</head>
+
+<body>
+<div class="container">
+ 
+    <table> 
+    <caption><h1>Encuesta</h1></caption> 
+    <form name="f" action="mailto:info@elecciones.es" method="get"> 
+     
+    <tr><td><b>Nombre:</b></td></tr> 
+    <tr><td><input type="text" name="nombre" value=""></td></tr> 
+     
+    <tr><td><b>Edad:</b></td></tr> 
+    <tr><td><input type="text" name="edad" value=""></td></tr> 
+     
+    <tr><td><b>Nivel de estudios:</b></td></tr> 
+    <tr><td><select name="estudios"> 
+    <option id="escoger" SELECTED>Escoger...</option> 
+    <option>Sin estudios</option> 
+    <option>Primaria</option> 
+    <option>Secundaria</option> 
+    <option>Instituto</option> 
+    <option>Universidad</option> 
+    </select></td></tr> 
+     
+    <tr><td><b>Opción que votará:</b></td></tr> 
+    <tr><td> 
+    <input type="radio" name="encuesta" value="nsnc" CHECKED>NS/NC</input> 
+    <input type="radio" name="encuesta" value="blanco">Voto en blanco</input> 
+    <input type="radio" name="encuesta" value="psoe">PSOE</input> 
+    <input type="radio" name="encuesta" value="pp">PP</input> 
+    <input type="radio" name="encuesta" value="bng">BNG</input> 
+    <input type="radio" name="encuesta" value="iu">IU</input> 
+    </td></tr> 
+     
+    <tr><td><b>Observaciones:</b></td></tr> 
+    <tr><td> 
+    <textarea name="observaciones"  rows="10" cols="50"></textarea> 
+    </td></tr> 
+     
+    <tr><td><input type="checkbox" name="condiciones">Acepta las condiciones<tr><td> 
+     
+    <tr><td><input type="submit" name="enviar" value="Enviar" onClick="return validar()"/> 
+    <input type="reset" name="borrar" value="Borrar"/></td></tr> 
+     
+    <tr><td><h5>Todos los datos excepto observaciones son obligatorios.</h5></td></tr> 
+     
+    </form> 
+     
+    </table> 
+</div>
+
+</body>
+</html>

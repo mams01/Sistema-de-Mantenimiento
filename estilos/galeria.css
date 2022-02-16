@@ -1,0 +1,111 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+nav{
+    text-align: right;
+    padding: 30px 50px 0 0;
+}
+
+nav > a{
+    color:rgb(15, 3, 3);
+    font-weight: 300;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+nav > a:hover{
+    text-decoration: underline;
+}
+
+.contenedor {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.contenedor-imagenes{
+    width: 40%;
+    height: 350px;
+    margin: 10px;
+    border: 3ps solid black;
+    overflow: hidden;
+    position: relative;
+}
+img{
+    width: 100%;
+    height: 100%;
+}
+.contenedor-imagenes:hover img{
+    filter: blur(1.5px);
+    transform: scale(1.5);
+    transition: all .3s;
+}
+.contenedor-imagenes:before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0,.3);
+    top: 0;
+    left: 0;
+    transition: all .3s;
+}
+.contenedor-imagenes:hover:before{
+    background: rgba(0, 0, 0,.4);
+    z-index: 2;
+    transition: all .3s;
+}
+.texto{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    color: white;
+    z-index: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}.titulo,.parrafo{
+    margin: 10px;
+    padding: 5px;
+}
+.titulo{
+    position: relative;
+    left: 100%;
+    transition: all .3s;
+}
+.contenedor-imagenes:hover .titulo{
+    left: 0;
+    animation-delay: .3s;
+    transition: all .3s;
+}
+.parrafo{
+    position: relative;
+    right: 100%;
+    transition: all .3s;
+}
+.contenedor-imagenes:hover .parrafo{
+    right: 0;
+    animation-delay:.3s;
+    transition: all .3s;
+}.contenedor-imagenes:after{
+    content: "";
+    position: absolute;
+    width: 80%;
+    height: 2px;
+    background: white;
+    left: -100%;
+    top: 20%;
+    z-index: 3;
+    transform: translateX(-50%) translateY(-50%);
+    transition: all .3s;
+}
+.contenedor-imagenes:hover:after{
+    left: 50%;
+    transition: all .3s;
+}
